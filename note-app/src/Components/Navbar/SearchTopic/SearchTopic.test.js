@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import SearchBar from "./SearchBar.js"
+import SearchBar from "./SearchTopic.js"
 
 
 it('should test the SearchBar component', () => {

@@ -2,32 +2,32 @@ import "./App.css";
 import HomePage from "../HomePage/HomePage.js";
 import ResultsPage from "../ResultsPage/ResultsPage.js";
 import NotesPage from "../NotesPage/NotesPage.js";
-import { Routes, Route } from "react-router-dom";
-import 'antd/dist/antd.less' 
-import Sidebar from "../Sidebar/Sidebar.js";
-import Style from "./App.module.css"
+import AddNotesPage from "../NotesPage/AddNotesPage.js";
+import NoteLists from "../NoteLists/NoteLists.js";
 
-// The routes are linked to each of the pages
+import { Routes, Route } from "react-router-dom";
+import "antd/dist/antd.less";
+import Navbar from "../Navbar/Navbar.js";
+import Style from "./App.module.css";
+
 function App() {
   return (
-    <div> 
-      <div className={Style.SidebarLayout}>
-        <div className={Style.Sidebar}>
-      <Sidebar/>
-      </div>
-      </div>
+    <div className={Style.App}>
       <div>
-          <Routes >
-            <Route path="/" element={<HomePage />} />
-            <Route path="/ResultsPage" element={<ResultsPage />} />
-            <Route path="/NotesPage" element={<NotesPage />} />
-          </Routes>
+        <Navbar />
+      </div>
+
+      <div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/ResultsPage" element={<ResultsPage />} />
+          <Route path="/NotesPage" element={<NotesPage />} />
+          <Route path="/AddNotesPage" element={<AddNotesPage />} />
+          <Route path="/NoteLists" element={<NoteLists />} />
+        </Routes>
       </div>
     </div>
   );
 }
 
 export default App;
-
-//test
-

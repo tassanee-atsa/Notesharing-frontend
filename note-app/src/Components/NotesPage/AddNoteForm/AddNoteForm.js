@@ -3,6 +3,7 @@ import NotesInput from "./NotesInput/NotesInput";
 import { useState } from "react";
 import TopicInput from "./TopicInput/TopicInput";
 import DateInput from "./DateInput/DateInput";
+import Style from "./AddNoteForm.module.css";
 
 //Enables notes to be posted to the database
 export default function AddNoteForm() {
@@ -16,7 +17,7 @@ export default function AddNoteForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ topics: topic, notes: text, date: date }),
     };
-    fetch("http://localhost:3000/notes/", requestOptions).then((response) =>
+    fetch("https://notesharing-twi4.onrender.com/notes/", requestOptions).then((response) =>
       response.json()
     );
   }
@@ -41,11 +42,12 @@ export default function AddNoteForm() {
 
 //This is displaying the components to add new notes
   return (
-    <div>
-      <AddNotesButton postNote={postNote} />
+    <div className={Style.AddNoteForm}>
+      <div> Add Note Form</div>
       <TopicInput topicChange={topicChange} />
       <DateInput dateChange={dateChange} />
       <NotesInput textChange={textChange} />
+      <AddNotesButton postNote={postNote} />
     </div>
   );
 }

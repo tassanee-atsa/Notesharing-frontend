@@ -1,0 +1,13 @@
+.SearchTopic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Button {
+  background-color: #e8e5e2;
+  color: #023047;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 16px;
+}
