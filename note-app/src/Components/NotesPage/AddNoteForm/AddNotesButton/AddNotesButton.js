@@ -9,7 +9,7 @@ export default function AddNotesButton(props) {
         onClick={props.postNote}
         value="submit"
       >
-        Submit Notes
+      Submit Notes
       </button>
     </form>
   );

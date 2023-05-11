@@ -12,7 +12,7 @@ const SelectDate = (props) => {
           value={props.text}
         />
         <button className={Style.button} onClick={props.getDate}>
-          Submit
+          Search
         </button>
       </form>
     </div>

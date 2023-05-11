@@ -1,0 +1,14 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 2em 1em 2em;
+}
+
+.Searchbar {
+  display: flex;
+}
+
+.Appname {
+  display: flex;
+  font-size: 18px;
+}

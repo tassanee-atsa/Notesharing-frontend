@@ -1,8 +1,9 @@
-import MusicGenerator from "./MusicGenerator/MusicGenerator";
-import SearchBar from "./SearchBar/SearchBar";
+import Title from "./Title/Title";
+import SearchBar from "./SearchTopic/SearchTopic";
 import SelectDate from "./SelectDate/SelectDate";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Style from "./Navbar.module.css";
 
 //This displays the sidebar components
 export default function Sidebar() {
@@ -23,7 +24,7 @@ export default function Sidebar() {
   async function getSearchedTopics(e) {
     e.preventDefault();
     let searchedTopics = await fetch(
-      `http://localhost:3000/notes/topics/${text}`
+      `https://notesharing-twi4.onrender.com/notes/topics/${text}`
     );
     let searchResults = await searchedTopics.json();
     console.log(searchResults);
@@ -33,7 +34,7 @@ export default function Sidebar() {
 
   async function getSearchedDate(e) {
     e.preventDefault();
-    let searchedDate = await fetch(`http://localhost:3000/notes/date/${date}`);
+    let searchedDate = await fetch(`https://notesharing-twi4.onrender.com/notes/date/${date}`);
     let searchResults = await searchedDate.json();
     //console.log(searchResults);
     navigate("/NotesPage/", { state: searchResults.payload });
@@ -41,18 +42,20 @@ export default function Sidebar() {
   }
 
   return (
-    <div>
-      <MusicGenerator />
-      <SearchBar
-        handleChange={handleChangeTopic}
-        getAllTopics={getSearchedTopics}
-        text={text}
-      />
-      <SelectDate
-        handleChange={handleChangeDate}
-        getDate={getSearchedDate}
-        text={date}
-      />
+    <div className={Style.Navbar}>
+      <Title className={Style.Appname} />
+      <div className={Style.Searchbar}>
+        <SearchBar
+          handleChange={handleChangeTopic}
+          getAllTopics={getSearchedTopics}
+          text={text}
+        />
+        <SelectDate
+          handleChange={handleChangeDate}
+          getDate={getSearchedDate}
+          text={date}
+        />
+      </div>
     </div>
   );
 }
