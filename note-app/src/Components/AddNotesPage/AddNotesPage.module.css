@@ -1,0 +1,6 @@
+.AddNoteForm {
+  background-color: #023047;
+  width: 100vw;
+  max-width: 100vw;
+  min-height: calc(100vh - 90px - 32px);
+}

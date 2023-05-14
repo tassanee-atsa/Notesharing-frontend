@@ -1,0 +1,22 @@
+.AddNoteContainer {
+    height: calc(100vh - 90px - 32px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.AddNoteForm {
+  padding: 0 80px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  height: 80%;
+  width: 70%;
+}
+
+@media (max-width: 500px) {
+  .AddNoteContainer {
+    height: calc(100vh - 180px - 32px);
+  }
+}

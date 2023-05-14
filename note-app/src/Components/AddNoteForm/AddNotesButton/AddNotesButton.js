@@ -3,13 +3,12 @@ import Style from "./AddNotesButton.module.css";
 export default function AddNotesButton(props) {
   // This adds new notes to the database, viewable via search by topic
   return (
-    <form className={Style.AddNotesButtonPosition}>
+    <form onSubmit={props.postNote}>
       <button
         className={Style.AddNotesButton}
-        onClick={props.postNote}
         value="submit"
       >
-      Submit Notes
+      Submit
       </button>
     </form>
   );

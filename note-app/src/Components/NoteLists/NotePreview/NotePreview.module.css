@@ -1,0 +1,47 @@
+.NotePreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 40px;
+  margin-top: 3px;
+  display: flex;
+  font-size: 12px;
+  color: #023047;
+  background-color: #e2e2de;
+  border-radius: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.NotePreview:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.NoteText {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+}
+
+.Arrow {
+  margin-right: 10px;
+}
+
+.Date {
+  min-width: 78px;
+  overflow: hidden;
+}
+
+@media (max-width: 500px) {
+  .NotePreview {
+    min-height: 72px;
+  }
+  .NoteText {
+    display: flex;
+    align-items: center;
+  }
+}

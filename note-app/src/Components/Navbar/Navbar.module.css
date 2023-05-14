@@ -1,14 +1,45 @@
 .Navbar {
   display: flex;
   justify-content: space-between;
-  padding: 1em 2em 1em 2em;
+  align-items: center;
+  margin: 16px 32px;
+  max-height: 90px;
+  
 }
 
 .Searchbar {
   display: flex;
+  gap: 12px;
 }
 
 .Appname {
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.Appname:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .Searchbar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .Navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 32px;
+    max-height: 180px;
+  }
+
+  .Searchbar {
+    display: flex;
+    flex-direction: column;
+  }
 }

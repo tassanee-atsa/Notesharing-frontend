@@ -28,7 +28,7 @@ export default function Sidebar() {
     );
     let searchResults = await searchedTopics.json();
     console.log(searchResults);
-    navigate("/ResultsPage/", { state: searchResults.payload });
+    navigate("/NoteLists/", { state: searchResults.payload });
     setText("");
   }
 
@@ -36,8 +36,7 @@ export default function Sidebar() {
     e.preventDefault();
     let searchedDate = await fetch(`https://notesharing-twi4.onrender.com/notes/date/${date}`);
     let searchResults = await searchedDate.json();
-    //console.log(searchResults);
-    navigate("/NotesPage/", { state: searchResults.payload });
+    navigate("/NoteLists/", { state: searchResults.payload });
     setDate("");
   }
 
@@ -47,7 +46,7 @@ export default function Sidebar() {
       <div className={Style.Searchbar}>
         <SearchBar
           handleChange={handleChangeTopic}
-          getAllTopics={getSearchedTopics}
+          getSearchedTopics={getSearchedTopics}
           text={text}
         />
         <SelectDate

@@ -1,11 +1,10 @@
 .SubTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-
-    color: #eff2f3;
-    padding: 50px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+  font-size: 24px;
+  color: #eff2f3;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: -45px; 
+  margin-left: 28px;
+  margin-right: 28px;
+  text-align: center;
 }

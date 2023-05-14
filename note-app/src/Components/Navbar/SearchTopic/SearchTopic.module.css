@@ -4,10 +4,23 @@
   align-items: center;
 }
 
-.Button {
-  background-color: #e8e5e2;
-  color: #023047;
-  font-weight: bold;
-  border-radius: 5px;
+.SearchInput {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.Input {
+  border: none;
   font-size: 16px;
+}
+
+.Input:focus{
+  outline: none;
+}
+
+.SearchAction:hover{
+  cursor: pointer;
 }

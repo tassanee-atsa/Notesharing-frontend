@@ -1,10 +1,12 @@
 import Style from "./NoteLists.module.css";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Note from "../ResultsPage/Note/Note";
+import { useLocation, useNavigate } from "react-router-dom";
+import NotePreview from "./NotePreview/NotePreview";
 
 export default function HomePage() {
   const [data, setData] = useState(undefined);
+  const location = useLocation();
+  const stateData = location.state;
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -12,40 +14,28 @@ export default function HomePage() {
       let responseJson = await response.json();
       setData(responseJson.data);
     };
-    fetchNotes();
-  }, [data]);
+    stateData ? setData(stateData) : fetchNotes();
+  }, [stateData]);
 
   let navigate = useNavigate();
 
-  async function newDate(text) {
-    let searchedDate = await fetch(
-      `https://notesharing-twi4.onrender.com/notes/topics/${text}`
-    );
-    let searchResults = await searchedDate.json();
-    //console.log(searchResults);
-    navigate("/NotesPage/", { state: searchResults.payload });
-  }
-
-  async function AddNotesButton() {
-    navigate("/AddNotesPage/");
+  function redirectToNote(note) {
+    navigate("/NotesPage/", { state: note });
   }
 
   return (
-    <div className={Style.NoteLists}>
-      <div className={Style.AddNotes} onClick={() => AddNotesButton()}>
-        Add Note
-      </div>
+    <ul className={Style.NoteLists}>
       {data &&
         data.map((note) => (
-          <div>
-            <div
-              className={Style.SearchResults}
-              onClick={() => newDate(note.topics)}
-            >
-              <Note key={note.id} date={note.date} topics={note.topics}></Note>
-            </div>
-          </div>
+          <NotePreview
+            key={note.id}
+            date={note.date}
+            topics={note.topics}
+            handleClick={() => {
+              redirectToNote(note);
+            }}
+          />
         ))}
-    </div>
+    </ul>
   );
 }

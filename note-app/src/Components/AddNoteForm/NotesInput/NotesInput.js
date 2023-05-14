@@ -6,7 +6,6 @@ const { TextArea } = Input;
 //Viewable via search by topic
 export default function NotesInput(props) {
   return (
-    <div className={Style.NotesInputPosition}>
       <TextArea
         type="text"
         placeholder="Enter Text Here..."
@@ -16,6 +15,5 @@ export default function NotesInput(props) {
           props.textChange(e);
         }}
       />
-    </div>
   );
 }

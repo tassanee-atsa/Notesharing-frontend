@@ -11,16 +11,14 @@ export default function AddNoteForm() {
   const [topic, setTopic] = useState("");
   const [date, setDate] = useState("");
 
-  function postNote() {
+  const postNote = async () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ topics: topic, notes: text, date: date }),
     };
-    fetch("https://notesharing-twi4.onrender.com/notes/", requestOptions).then((response) =>
-      response.json()
-    );
-  }
+    await fetch(`https://notesharing-twi4.onrender.com/notes/`, requestOptions);
+  };
 
   function textChange(e) {
     let newText = e.target.value;
@@ -40,14 +38,16 @@ export default function AddNoteForm() {
     console.log(topic);
   }
 
-//This is displaying the components to add new notes
+  //This is displaying the components to add new notes
   return (
-    <div className={Style.AddNoteForm}>
-      <div> Add Note Form</div>
-      <TopicInput topicChange={topicChange} />
-      <DateInput dateChange={dateChange} />
-      <NotesInput textChange={textChange} />
-      <AddNotesButton postNote={postNote} />
+    <div className={Style.AddNoteContainer}>
+      <div className={Style.AddNoteForm}>
+        <h2>Add Note</h2>
+        <TopicInput topicChange={topicChange} />
+        <DateInput dateChange={dateChange} />
+        <NotesInput textChange={textChange} />
+        <AddNotesButton postNote={postNote} />
+      </div>
     </div>
   );
 }

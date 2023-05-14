@@ -1,0 +1,14 @@
+.TopicInput{
+    width: 100%;
+    margin-top: 30px;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 8px 4px;
+    margin-bottom: 8px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.TopicInput:focus{
+    outline: none;
+}

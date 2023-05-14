@@ -1,0 +1,53 @@
+
+.AddNotesButton {
+  align-items: center;
+  appearance: none;
+  background-color: #4f58fd;
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding: 6px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s, background-position 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.AddNotesButton:active,
+.AddNotesButton:focus {
+  outline: none;
+}
+
+.AddNotesButton:hover {
+  background-position: -20px -20px;
+}
+
+.AddNotesButton:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 0.125em;
+}
+
+
+@media (max-width: 500px) {
+    .AddNotesButton {
+      width: 100%;
+    }
+  }
+  
