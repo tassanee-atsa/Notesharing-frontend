@@ -17,7 +17,7 @@ export default function AddNoteForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ topics: topic, notes: text, date: date }),
     };
-    await fetch(`https://notesharing-twi4.onrender.com/notes/`, requestOptions);
+    await fetch(`https://notesharing-backend.vercel.app/notes`, requestOptions);
   };
 
   function textChange(e) {

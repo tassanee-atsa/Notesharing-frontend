@@ -24,7 +24,7 @@ export default function Sidebar() {
   async function getSearchedTopics(e) {
     e.preventDefault();
     let searchedTopics = await fetch(
-      `https://notesharing-twi4.onrender.com/notes/topics/${text}`
+      `https://notesharing-backend.vercel.app/notes/topics/${text}`
     );
     let searchResults = await searchedTopics.json();
     console.log(searchResults);
@@ -34,7 +34,7 @@ export default function Sidebar() {
 
   async function getSearchedDate(e) {
     e.preventDefault();
-    let searchedDate = await fetch(`https://notesharing-twi4.onrender.com/notes/date/${date}`);
+    let searchedDate = await fetch(`https://notesharing-backend.vercel.app/notes/date/${date}`);
     let searchResults = await searchedDate.json();
     navigate("/NoteLists/", { state: searchResults.payload });
     setDate("");

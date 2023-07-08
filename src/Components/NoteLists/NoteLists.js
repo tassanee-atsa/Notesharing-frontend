@@ -10,7 +10,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const fetchNotes = async () => {
-      let response = await fetch(`https://notesharing-twi4.onrender.com/notes/`);
+      let response = await fetch(`https://notesharing-backend.vercel.app/notes`);
       let responseJson = await response.json();
       setData(responseJson.data);
     };
